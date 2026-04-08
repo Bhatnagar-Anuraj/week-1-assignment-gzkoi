@@ -78,33 +78,103 @@ building = cmds.polyCube(
 cmds.move(building_x, building_height / 2.0, building_z, building)
 
 # ---------------------------------------------------------------------------
-# TODO: Add Object 2
 # Create a second object using a DIFFERENT primitive type than the cube above.
 # Remember to:
 #   - Use descriptive variable names for size and position.
 #   - Name the object meaningfully with the 'name' parameter or cmds.rename().
 #   - Position it so it sits on the ground (not floating or buried).
+
+# Object 2: Tree Trunk (cylinder)
+trunk_height = 5
+trunk_radius = 0.5
+tree_x = 5
+tree_z = 6
+
+tree_trunk = cmds.polyCylinder(
+    name="tree_trunk_01",
+    height=trunk_height,
+    radius=trunk_radius
+)[0]
+
+cmds.move(tree_x, trunk_height / 2.0, tree_z, tree_trunk)
 # ---------------------------------------------------------------------------
 
 
 # ---------------------------------------------------------------------------
-# TODO: Add Object 3
+# Object 3: Tree Leaves (a sphere)
+leaves_radius = 2
+
+tree_leaves = cmds.polySphere(
+    name="tree_leaves_01",
+    radius=leaves_radius
+)[0]
+
+cmds.move(tree_x, trunk_height + leaves_radius, tree_z, tree_leaves)
 # ---------------------------------------------------------------------------
 
 
 # ---------------------------------------------------------------------------
-# TODO: Add Object 4
+# Object 4: Lamp
+lamp_height = 7
+lamp_radius = 0.2
+lamp_x = 2
+lamp_z = -4
+
+lamp_post = cmds.polyCylinder(
+    name="lamp_post",
+    height=lamp_height,
+    radius=lamp_radius
+)[0]
+
+cmds.move(lamp_x, lamp_height / 2.0, lamp_z, lamp_post)
+
+bulb_radius = 0.5
+
+lamp_light = cmds.polySphere(
+    name="lamp_light",
+    radius=bulb_radius
+)[0]
+
+cmds.move(lamp_x, lamp_height + bulb_radius, lamp_z, lamp_light)
+# ---------------------------------------------------------------------------
+
+
+
+
+# ---------------------------------------------------------------------------
+# Object 5: Bench
+bench_width = 3
+bench_height = 0.5
+bench_depth = 1
+bench_x = -2
+bench_z = -3
+
+bench_seat = cmds.polyCube(
+    name="bench_seat",
+    width=bench_width,
+    height=bench_height,
+    depth=bench_depth
+)[0]
+
+cmds.move(bench_x, bench_height / 2.0, bench_z, bench_seat)
 # ---------------------------------------------------------------------------
 
 
 # ---------------------------------------------------------------------------
-# TODO: Add Object 5
-# ---------------------------------------------------------------------------
-
-
-# ---------------------------------------------------------------------------
-# TODO (Optional): Add more objects to make your scene more interesting!
+# T O D O (Optional): Add more objects to make your scene more interesting!
 # Consider: trees, lamp posts, fences, vehicles, animals, etc.
+
+# Object 7: Rock (another sphere)
+rock_radius = 1.2
+rock_x = 6
+rock_z = -2
+
+rock = cmds.polySphere(
+    name="rock_01",
+    radius=rock_radius
+)[0]
+
+cmds.move(rock_x, rock_radius, rock_z, rock)
 # ---------------------------------------------------------------------------
 
 
